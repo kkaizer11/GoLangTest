@@ -27,8 +27,6 @@ func ft_bubble_sort(tab []int) []int{
 }
 
 
-
-
 func main(){
   rand_num := []int{90, -5 , 13, 58,27}
   ft_bubble_sort(rand_num)
