@@ -1,11 +1,11 @@
-package main 
+package main
 
-import "fmt"
+// import "fmt"
 
-func ft_swap(a *int ,b *int){
-  tmp := *a
-  *a = *b
-  *b = tmp
+func ft_swap(a *int, b *int) {
+	tmp := *a
+	*a = *b
+	*b = tmp
 }
 
 // func main(){
@@ -18,4 +18,3 @@ func ft_swap(a *int ,b *int){
 //   fmt.Printf("O novo valor de x:%d e o de y:%d\n", x, y)
 
 // }
-
