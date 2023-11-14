@@ -4,17 +4,8 @@ import (
 	"fmt"
 )
 
+// TODO: fazer aqui
 func getExpenseReport(e expense) (string, float64) {
-	// ?
-	em, ok := e.(email)
-	if ok {
-		return em.toAddress, em.cost()
-	}
-	sm, ok := e.(sms)
-	if ok {
-		return sm.toPhoneNumber, sm.cost()
-	}
-	return "", .0
 }
 
 // don't touch below this line
@@ -87,17 +78,17 @@ func main() {
 	})
 	test(email{
 		isSubscribed: false,
-		body:         "This meeting could have been an email",
+		body:         "Wanna catch up later?",
 		toAddress:    "elon@doe.com",
 	})
 	test(sms{
 		isSubscribed:  false,
-		body:          "This meeting could have been an email",
+		body:          "I'm a Nigerian prince, please send me your bank info so I can deposit $1000 dollars",
 		toPhoneNumber: "+155555509832",
 	})
 	test(sms{
 		isSubscribed:  false,
-		body:          "This meeting could have been an email",
+		body:          "I don't need this",
 		toPhoneNumber: "+155555504444",
 	})
 	test(invalid{})
