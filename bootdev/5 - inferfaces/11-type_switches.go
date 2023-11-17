@@ -4,8 +4,14 @@ import (
 	"fmt"
 )
 
-// TODO: fazer aqui
 func getExpenseReport(e expense) (string, float64) {
+	switch s := e.(type) {
+	case email:
+		return s.toAddress, s.cost()
+	case sms:
+		return s.toPhoneNumber, s.cost()
+	}
+	return "", .0
 }
 
 // don't touch below this line
