@@ -11,6 +11,6 @@ func ft_reverse(s string) string {
 }
 
 func main() {
-	x := ft_reverse("Volta Redonda")
+	x := ft_reverse("-121")
 	fmt.Println(x)
 }
