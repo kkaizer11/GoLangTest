@@ -7,19 +7,22 @@ import (
 )
 
 func startRepl() {
-	scanner := bufio.NewScanner(os.Stdin)
+	scanf := bufio.NewScanner(os.Stdin)
 	for {
-
-		fmt.Print("Digite: ")
-
-		scanner.Scan()
-		text := scanner.Text()
-		if len(text) == 0 {
+		fmt.Print(">")
+		scanf.Scan()
+		text := scanf.Text()
+		cleanned := cleanInput(text)
+		available_commands := getCommands()
+		if len(cleanned) == 0 {
 			continue
-		} else if text == "exit" {
-			fmt.Println("Exiting the prompt")
-			break
 		}
-		fmt.Println(">", ft_reverse(text))
+		commandName := cleanned[0]
+		command, ok := available_commands[commandName]
+		if !ok {
+			fmt.Println("Invalid Command")
+			continue
+		}
+		command.callback()
 	}
 }
